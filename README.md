@@ -10,7 +10,7 @@ Fork this repository, install needed libraries with:
 pip install websockets
 ```
 
-# Example of use:
+# Example of use
 
 Synchronous API:
 ```py
