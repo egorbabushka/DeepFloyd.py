@@ -26,3 +26,5 @@ with open('upscale_0.png', 'wb+') as f:
 
 Original API in JavaScript:
 https://github.com/Pozaza/DeepFloyd-Unofficial-API
+
+![example.png](https://i.imgur.com/yyV3u9s.png)
