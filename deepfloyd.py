@@ -4,7 +4,6 @@ import json
 import math
 import random
 import secrets
-import requests
 import base64
 
 
@@ -27,7 +26,7 @@ class deepfloydapi:
       while True:
         message = websocket.recv()
         out = json.loads(message)
-        print(f"Received: {out['msg']}")
+        # print(f"Received: {out['msg']}")
         match out['msg']:
           case 'send_hash':
             websocket.send(json.dumps({'fn_index': 20, 'session_hash': self.sessionhash}))
@@ -48,7 +47,7 @@ class deepfloydapi:
       while True:
         message = websocket.recv()
         out = json.loads(message)
-        print(f"Received: {out['msg']}")
+        # print(f"Received: {out['msg']}")
         match out['msg']:
           case 'send_hash':
             websocket.send(json.dumps({'fn_index': 34, 'session_hash': self.sessionhash}))
