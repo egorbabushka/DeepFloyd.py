@@ -23,8 +23,8 @@ for i in range(len(urls)):
 with open('upscale_0.png', 'wb+') as f:
   f.write(api.upscale(0)) # 0 - индекс изображения, которое вы хотите увеличить
 ```
-
-Original API in JavaScript:
-https://github.com/Pozaza/DeepFloyd-Unofficial-API
-
+Result:
 ![example.png](https://i.imgur.com/yyV3u9s.png)
+
+# Original API in JavaScript by Pozaza:
+https://github.com/Pozaza/DeepFloyd-Unofficial-API
