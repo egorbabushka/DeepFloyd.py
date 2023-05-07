@@ -5,7 +5,7 @@ Small unofficial DeepFloyd API on Python
 Python 3.10+(match case support)
 
 # Installation
-fork this repository, install needed libraries with:
+Fork this repository, install needed libraries with:
 ```
 pip install websockets
 ```
@@ -23,8 +23,17 @@ for i in range(len(urls)):
 with open('upscale_0.png', 'wb+') as f:
   f.write(api.upscale(0)) # 0 - индекс изображения, которое вы хотите увеличить
 ```
-Result:
+
+
+Result(upscaled):
+
 ![example.png](https://i.imgur.com/yyV3u9s.png)
+
+
+Not upscaled:
+
+![example.png](https://i.imgur.com/PLpLdYO.png)
+
 
 # Original API in JavaScript by Pozaza:
 https://github.com/Pozaza/DeepFloyd-Unofficial-API
