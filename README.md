@@ -1,6 +1,9 @@
 # DeepFloyd.py
 Small unofficial DeepFloyd API on Python
 
+# Requirements
+Python 3.10+(match case support)
+
 # Installation
 fork this repository, install needed libraries with:
 ```
