@@ -1,5 +1,5 @@
 # DeepFloyd.py
-Small unofficial DeepFloyd API on Python
+Small unofficial DeepFloyd API in Python
 
 # Requirements
 Python 3.10+(match case support)
