@@ -16,6 +16,8 @@ Synchronous API:
 ```py
 import requests
 from deepfloyd import deepfloydapi
+
+
 api = deepfloydapi('sst5l') # sst5l - индекс пространства hugging faces
 urls = api.generate('apple', 'red color')['img_urls'] # apple - prompt, red color - negative prompt(необязателен)
 for i in range(len(urls)):
@@ -29,28 +31,20 @@ with open('upscale_0.png', 'wb+') as f:
 Asynchronous API:
 ```py
 import asyncio
-
-from deepfloyd import deepfloydapi
-
+from deepfloydasync import deepfloydapi
 import requests
 
+
 async def main():
-
   api = deepfloydapi('sst5l') # sst5l - индекс пространства hugging faces
-
   urls = (await api.generate('apple', 'red color'))['img_urls'] # apple - prompt, red color - negative prompt(он необязателен)
-
   for i in range(len(urls)):
-
     resource = requests.get(urls[i]) # получаем байты изображения и итогового url
-
     with open(f'res{i}.png', 'wb+') as f:
-
       f.write(resource.content)
-
   with open('upscale_0.png', 'wb+') as f:
-
     f.write(await api.upscale(0)) # 0 - индекс изображения, которое вы хотите увеличить
+
 
 asyncio.run(main())
 ```
