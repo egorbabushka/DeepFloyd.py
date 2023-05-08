@@ -7,7 +7,7 @@ Python 3.10+(match case support)
 # Installation
 Fork this repository, install needed libraries with:
 ```
-pip install websockets
+pip install websockets, requests
 ```
 
 # Example of use
