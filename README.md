@@ -46,12 +46,18 @@ asyncio.run(main())
 
 Results(upscaled):
 
-![example.png](https://i.imgur.com/yyV3u9s.png)
+![upscale_0.png](https://i.imgur.com/ruqu9Vo.png)
+![upscale_1.png](https://i.imgur.com/QtXklmG.png)
+![upscale_2.png](https://i.imgur.com/NddZlRl.png)
+![upscale_3.png](https://i.imgur.com/pP4N4PI.png)
 
 
 Not upscaled:
 
-![example.png](https://i.imgur.com/PLpLdYO.png)
+![res0.png](https://i.imgur.com/rrc6RFY.png)
+![res0.png](https://i.imgur.com/HN9LPOJ.png)
+![res0.png](https://i.imgur.com/ImY9kGs.png)
+![res0.png](https://i.imgur.com/gRlHFxQ.png)
 
 
 # Original API in JavaScript by Pozaza:
