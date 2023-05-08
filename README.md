@@ -12,44 +12,39 @@ pip install websockets
 
 # Example of use
 
-Synchronous API:
+Synchronous API(example.py):
 ```py
-import requests
 from deepfloyd import deepfloydapi
 
-
 api = deepfloydapi('sst5l') # sst5l - индекс пространства hugging faces
-urls = api.generate('apple', 'red color') # apple - prompt, red color - negative prompt(необязателен)
-for i in range(len(urls)):
-  resource = requests.get(urls[i]) # получаем байты изображения из итогового url
+generation = api.generate('green apple covered with honey and sliced', 'red apple, yellow apple, terrible quality, not realistic result') # первый аргумент - prompt, второй - negative prompt(необязателен). возвращает объект типа Generation.
+imgbytes = generation.getbytes() # generation.geturls() если нужны ссылки изображений
+for i in range(len(imgbytes)):
   with open(f'res{i}.png', 'wb+') as f:
-    f.write(resource.content)
+    f.write(imgbytes[i])
 with open('upscale_0.png', 'wb+') as f:
-  f.write(api.upscale(0)) # 0 - индекс изображения, которое вы хотите увеличить
+  f.write(generation.upscale(0)) # 0 - индекс изображения, которое вы хотите увеличить
 ```
 
-Asynchronous API:
+Asynchronous API(example_async.py):
 ```py
-import asyncio
 from deepfloydasync import deepfloydapi
-import requests
-
+import asyncio
 
 async def main():
   api = deepfloydapi('sst5l') # sst5l - индекс пространства hugging faces
-  urls = (await api.generate('apple', 'red color')) # apple - prompt, red color - negative prompt(он необязателен)
-  for i in range(len(urls)):
-    resource = requests.get(urls[i]) # получаем байты изображения и итогового url
+  generation = await api.generate('green apple covered with honey and sliced', 'red apple, yellow apple, terrible quality, not realistic result') # первый аргумент - prompt, второй - negative prompt(необязателен). возвращает объект типа Generation.
+  imgbytes = await generation.getbytes() # await generation.geturls() если нужны ссылки изображений или просто лень ждать, когда библиотека закончит фетчить байты из url-ов
+  for i in range(len(imgbytes)):
     with open(f'res{i}.png', 'wb+') as f:
-      f.write(resource.content)
+      f.write(imgbytes[i])
   with open('upscale_0.png', 'wb+') as f:
-    f.write(await api.upscale(0)) # 0 - индекс изображения, которое вы хотите увеличить
-
+    f.write(await generation.upscale(0)) # 1 аргумент - индекс изображения, которое вы хотите увеличить
 
 asyncio.run(main())
 ```
 
-Result(upscaled):
+Results(upscaled):
 
 ![example.png](https://i.imgur.com/yyV3u9s.png)
 
