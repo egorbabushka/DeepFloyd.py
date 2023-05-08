@@ -37,7 +37,7 @@ import requests
 
 async def main():
   api = deepfloydapi('sst5l') # sst5l - индекс пространства hugging faces
-  urls = (await api.generate('apple', 'red color'))['img_urls'] # apple - prompt, red color - negative prompt(он необязателен)
+  urls = (await api.generate('apple', 'red color')) # apple - prompt, red color - negative prompt(он необязателен)
   for i in range(len(urls)):
     resource = requests.get(urls[i]) # получаем байты изображения и итогового url
     with open(f'res{i}.png', 'wb+') as f:
