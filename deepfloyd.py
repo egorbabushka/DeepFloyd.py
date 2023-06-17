@@ -38,7 +38,7 @@ class Generation:
             return base64.decodebytes(str.encode(out['output']['data'][0].replace('data:image/png;base64,', '')))
 
 class deepfloydapi:
-  def __init__(self, spaceIndex='sst5l'):
+  def __init__(self, spaceIndex='swkhl'):
     self.url = f'deepfloyd-if--{spaceIndex}.hf.space'
     self.sessionhash = str(secrets.token_hex(16))
 
